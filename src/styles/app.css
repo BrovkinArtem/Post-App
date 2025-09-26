@@ -1,0 +1,116 @@
+:root {
+    --primary-color: teal;
+    --accent-color: orange;
+    --bg-light: #f9f9f9;
+    --border-radius: 8px;
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg-light);
+    min-height: 100vh;
+}
+
+.App {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Пост */
+.post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    margin-top: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.post:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.post__btns {
+    display: flex;
+    gap: 8px;
+}
+
+/* Анимации появления/исчезновения */
+.post-enter {
+    transform: translateX(-350px);
+    opacity: 0;
+}
+.post-enter-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 500ms ease-in-out;
+}
+.post-exit {
+    opacity: 1;
+}
+.post-exit-active {
+    transform: translateX(-350px);
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+}
+
+/* Пагинация */
+.page {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background: #fff;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+}
+
+.page:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.page__wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.page__current {
+    border: 2px solid var(--accent-color);
+    font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #ececec;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar__links {
+    margin-left: auto;
+    display: flex;
+    gap: 15px;
+}
